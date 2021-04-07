@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/WebApplication">
+  <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" name="jdbc/baza" password="pass to your server goes here" type="javax.sql.DataSource" url="url to your database goes here" username="username of your server user goes here"/>
+  <!-- Realm name (dataSourceName attribute) has to match resource name from tomcat's server.xml configuration file -->
+  <Realm className="org.apache.catalina.realm.DataSourceRealm" dataSourceName="jdbc/authority" roleNameCol="role_name_column" userCredCol="user_password_column" userNameCol="user_name_column" userRoleTable="user_role_column" userTable="db_user_table"/>
+<!-- Example config: -->
+<!-- <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" name="jdbc/baza" password="password" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306;databaseName=database" username="user"/> -->
+<!-- <Realm className="org.apache.catalina.realm.DataSourceRealm" dataSourceName="jdbc/authority" roleNameCol="db_role_name_column" userCredCol="db_user_pass_column" userNameCol="db_user_name_column" userRoleTable="db_user_role_table" userTable="db_user_table"/> -->
+</Context>
